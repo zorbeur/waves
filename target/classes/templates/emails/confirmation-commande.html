@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${subject}">Confirmation de commande</title>
+</head>
+<body>
+    <h2>Bonjour <span th:text="${client.nomComplet}"></span>,</h2>
+    <p>Votre commande <strong th:text="${commande.numeroCommande}"></strong> est confirmée.</p>
+    <div th:if="${qrCode}">
+        <h3>QR Code Livraison</h3>
+        <img th:src="'data:image/png;base64,' + ${qrCode}" alt="QR Code Livraison" />
+    </div>
+    <p>Merci pour votre confiance.</p>
+</body>
+</html>
